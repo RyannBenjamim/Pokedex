@@ -1,7 +1,7 @@
 # Pokedex
 <h1>Projeto Pokédex feito com Javascript, HTML, CSS e PokeAPI para os dados dos pokémon</h1>
 
-Um site feito para pesquisar ou gerar um pokémon aleatório, o site possui 905 pokémons para vizualizar
+Um site feito para pesquisar ou gerar um pokémon aleatório, o site possui 905 pokémons para visualizar
 
 <h3>Funcionabilidades:</h3>
 - Pesquisar pokémon <br>
