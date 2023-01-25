@@ -28,7 +28,12 @@ const renderPokemon = async (pokemon) => {
 
     pokemonName.innerText = data.name
     pokemonNumber.innerText = `#${data.id}`
-    pokemonGif.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+    
+    if (data.id <= 649) {
+        pokemonGif.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+    } else {
+        pokemonGif.src = data['sprites']['front_default']
+    }
 }
 
 // Botão de pesquisar pokémon
@@ -52,7 +57,7 @@ searchInput.addEventListener('keypress', (ev) => {
 btnRandom.addEventListener('click', () => {
     audioClick.play()
     searchInput.value = ""
-    const number = Math.floor(Math.random() * 649)
+    const number = Math.floor(Math.random() * 905)
 
     renderPokemon(number)
 })
