@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F2441"/ id="metaColor">
+    <title>Pokédex</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicons/favicon-16x16.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link do CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="card">
+       <img src="images/default.gif" alt="pokemon" class="pokemonGif">
+       <div class="card-info">
+           <span class="number">#000</span>
+           <span class="name">Name...</span>
+       </div>
+
+       <input id="search" placeholder="Pesquise um pokémon">
+
+       <div class="btns">
+           <button class="btn" id="btnSearch">Pesquisar</button>
+           <button class="btn" id="btnRandom">Aleatório</button>
+       </div>
+   </div>
+
+   <div class="mode-btn" data-theme="dark">
+       <i class="fa-solid fa-moon"></i>
+    </div>
+
+    <a href="https://www.instagram.com/ryann_benjamim/" target="blank">
+        <p id="credits">&copy; RyanCosta</p>
+    </a>
+
+   <audio src="audio/error.mp3" id="error"></audio>
+   <audio src="audio/click.mp3" id="click"></audio>
+
+   <!-- Link do Javascript -->
+   <script src="js/script.js"></script>
+   <script src="js/themes.js"></script>
+</body>
+</html>
