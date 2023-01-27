@@ -11,6 +11,8 @@
     --bg-color2: #1d3457;
     --bg-color3: #172A46;
     --btn-color: #32767C;
+    --modal-color: #1d3457;
+    --modal-color2: #172A46;
     --btn-text: #fdfdfd;
     --text-primary: #fdfdfd;
     --text-secundary: #ebe7e7;
@@ -31,6 +33,7 @@ body {
     height: 100vh;
 }
 
+/* --------------------- CARD PRINCIAPL --------------------- */
 .card {
     background-color: var(--bg-color2);
     border-radius: 6px;
@@ -75,6 +78,8 @@ body {
 
 #search::placeholder {
     color: var(--text-primary);
+    opacity: 60%;
+    letter-spacing: 1px;
 }
 
 .card .btns {
@@ -106,6 +111,7 @@ body {
 }
 
 .number {
+    font-size: 14px;
     color: var(--text-secundary);
     font-weight: 500;
 }
@@ -117,6 +123,27 @@ body {
     text-transform: capitalize;
     margin-top: 10px;
     color: var(--text-primary);
+}
+
+.more {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin-top: 15px;
+    padding: 4px;
+    transition: 0.2s ease-in;
+}
+
+.more.block {
+    display: none;
+}
+
+.more:hover {
+    opacity: 0.5;
 }
 
 .mode-btn {
@@ -131,12 +158,145 @@ body {
     cursor: pointer;
 }
 
+/* --------------------- MODAL - MAIS INFORMAÇÕES --------------------- */
+
+.modalBG {
+    display: block;
+    position: absolute;
+    background-color: var(--modal-color);
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.modalBG.block {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    z-index: 2;
+
+    background-color: var(--modal-color2);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.151);
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.modal.block {
+    display: none;
+}
+
+.modal .infos, .infos2 {
+    background-color: var(--modal-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.modal .infos {
+    width: 300px;
+}
+
+.alturaPeso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--text-secundary); 
+}
+
+.infos img {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.infos .line {
+    width: 90%;
+    height: 1px;
+    border-radius: 10px;
+    opacity: 40%;
+    background-color: var(--text-primary);
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.infoName, .infoTipo {
+    text-align: center;
+}
+
+.infoName {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+    color: var(--text-primary);
+}
+
+.infoTipo {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+    color: var(--text-secundary); 
+    margin-bottom: 15px;
+}
+
+.modal .infos2 {
+    justify-content: space-around;
+    width: 260px;
+    padding-left: 30px;
+}
+
+.scores {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.btnModalClose {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--btn-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.btnModalClose:hover {
+    scale: 1.2;
+}
+
+.btnModalClose i {
+    color: var(--btn-text);
+    font-size: 18px;
+}
+
 #credits {
     color: var(--text-primary);
     opacity: 80%;
     margin-top: 20px;
     letter-spacing: 1px;
 }
+
+/* --------------------- MEDIA QUERYS --------------------- */
 
 @media (max-width: 700px) {
     .card {
@@ -145,5 +305,28 @@ body {
 
     .card .btns:hover :not(:hover) {
         opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal {
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .modal .infos {
+        width: 100%;
+    }
+
+    .modal .infos2 {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 470px) {
+    .modal {
+        flex-direction: column;
+        width: 80%;
     }
 }
